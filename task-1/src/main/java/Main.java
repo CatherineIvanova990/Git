@@ -1,13 +1,14 @@
+import dao.UserDaoJDBCImpl;
 import model.User;
 import service.UserServiceImpl;
 
 import java.util.List;
 
 public class Main {
-
-    private static final UserServiceImpl service = new UserServiceImpl();
-
     public static void main(String[] args) {
+
+        UserServiceImpl service = new UserServiceImpl(new UserDaoJDBCImpl());
+
         service.createUsersTable();
 
         service.saveUser("Ivan","Ivanov", (byte) 23);
@@ -23,8 +24,5 @@ public class Main {
         service.cleanUsersTable();
 
         service.dropUsersTable();
-
-
-        // реализуйте алгоритм здесь
     }
 }

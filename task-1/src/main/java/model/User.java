@@ -1,6 +1,14 @@
 package model;
 
-import javax.persistence.*;
+
+import org.hibernate.annotations.Entity;
+
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "users")
@@ -63,8 +71,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-               "id=" + id +
-               ", name='" + name + '\'' +
+               "name='" + name + '\'' +
                ", lastName='" + lastName + '\'' +
                ", age=" + age +
                '}';
