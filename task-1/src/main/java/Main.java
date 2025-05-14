@@ -1,3 +1,4 @@
+import dao.UserDaoHibernateImpl;
 import dao.UserDaoJDBCImpl;
 import model.User;
 import service.UserServiceImpl;
@@ -7,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        UserServiceImpl service = new UserServiceImpl(new UserDaoJDBCImpl());
+        UserServiceImpl service = new UserServiceImpl(new UserDaoHibernateImpl());
 
         service.createUsersTable();
 
